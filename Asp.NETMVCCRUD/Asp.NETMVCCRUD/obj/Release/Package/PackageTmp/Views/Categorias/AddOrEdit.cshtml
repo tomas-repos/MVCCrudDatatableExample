@@ -1,0 +1,56 @@
+﻿@model Asp.NETMVCCRUD.Models.Category
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("AddOrEdit", "Categorias", FormMethod.Post, new { onsubmit = "return SubmitForm(this)" }))
+{
+    @Html.HiddenFor(model => model.CategoryID)
+
+    <div class="form-group">
+        <div class="container">
+            <div class="col-md-6 ">
+                @Html.Label("Nombre de Categoria", new { @class = "control-label", maxlength = 15 })
+                @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { @class = "form-control alphaonly", maxlength = 300 } })
+                @Html.ValidationMessageFor(model => model.CategoryName)
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="col-md-6" style="height:10px">
+                @Html.Label("Descripción De Categoría", new { @class = "control-label" })
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control " } })
+                @Html.ValidationMessageFor(model => model.Description)
+
+            </div>
+        </div>
+
+    </div>
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.Picture, new { @class = "control-label" })
+            @Html.EditorFor(model => model.Picture, new { htmlAttributes = new { @class = "form-control" } })
+        </div>*@
+    
+    <br/>
+    <br/>
+    <br/>
+
+    <div class="form-group">
+        <div class="container">
+            <div class="col-md-6 ">
+                <input type="submit" value="Ingresar" class="btn btn-primary" />
+                <input type="reset" value="Reset" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('.alphaonly').bind('keyup blur', function () {
+                var node = $(this);
+                node.val(node.val().replace(/[^a-z]/g, ''));
+            }
+            );
+        });
+    </script>
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5beedd7fe44648fe9fd0c66a7ae1e120" Name="Diagram1">
+        <EntityTypeShape EntityType="MvcCRUDDBModel.Employee" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcCRUDDBModel.Category" Width="1.5" PointX="3.375" PointY="1.625" />
+        <EntityTypeShape EntityType="MvcCRUDDBModel.Product" Width="1.5" PointX="5.625" PointY="1" />
+        <EntityTypeShape EntityType="MvcCRUDDBModel.Supplier" Width="1.5" PointX="3.375" PointY="4.875" />
+        <AssociationConnector Association="MvcCRUDDBModel.FK_Products_Categories" />
+        <AssociationConnector Association="MvcCRUDDBModel.FK_Products_Suppliers" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
